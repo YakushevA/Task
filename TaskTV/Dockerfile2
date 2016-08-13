@@ -1,0 +1,27 @@
+FROM debian
+MAINTAINER Yakushev Alexander For TradingView
+RUN apt-get update
+RUN apt-get install apache2 -y
+RUN apt-get install mc -y
+RUN apt-get install nano -y
+RUN apt-get install curl -y
+RUN apt-get install nmap -y
+RUN mkdir -p /var/www/docker-alice/site
+RUN mkdir -p /var/www/docker-bob/site
+RUN mkdir -p /var/www/docker-tom/site
+RUN chown -R $USER:$USER /var/www/docker-alice/site
+RUN chown -R $USER:$USER /var/www/docker-bob/site
+RUN chown -R $USER:$USER /var/www/docker-tom/site
+RUN chmod -R 755 /var/www
+ADD apache-default /apache-default
+ADD script_perl2.pl /script_perl2.pl
+RUN chmod 700 /script_perl2.pl
+CMD perl /script_perl2.pl
+
+
+
+
+
+
+
+

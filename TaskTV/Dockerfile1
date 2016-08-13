@@ -1,0 +1,17 @@
+FROM debian
+MAINTAINER Yakushev Alexander For TradingView
+RUN apt-get update
+RUN apt-get install nginx -y
+RUN apt-get install mc -y
+RUN apt-get install nano -y
+RUN apt-get install nmap -y
+RUN apt-get install curl -y
+ADD default /default
+ADD script_perl.pl /script_perl.pl
+ADD nginx.conf /nginx.conf
+RUN cp /nginx.conf /etc/nginx/nginx.conf
+RUN chmod 700 /script_perl.pl
+CMD perl /script_perl.pl
+
+
+
