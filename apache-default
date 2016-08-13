@@ -1,0 +1,7 @@
+<VirtualHost *:80>
+        ServerName _NAME_
+        ServerAlias www._NAME_
+        ServerAdmin admin@_NAME_
+        DocumentRoot /var/www/_NAME_/site
+</VirtualHost>
+

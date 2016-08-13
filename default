@@ -1,0 +1,7 @@
+server {
+        listen 80;
+        server_name _NAME_;
+        location / {
+        proxy_pass http://172.17.0.1:_PORT_;
+        }
+}
