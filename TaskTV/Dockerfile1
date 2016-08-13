@@ -11,7 +11,7 @@ ADD script_perl.pl /script_perl.pl
 ADD nginx.conf /nginx.conf
 RUN cp /nginx.conf /etc/nginx/nginx.conf
 RUN chmod 700 /script_perl.pl
-CMD perl /script_perl.pl
+CMD ["perl", "/script_perl.pl"]
 
 
 

@@ -16,7 +16,7 @@ RUN chmod -R 755 /var/www
 ADD apache-default /apache-default
 ADD script_perl2.pl /script_perl2.pl
 RUN chmod 700 /script_perl2.pl
-CMD perl /script_perl2.pl
+CMD ["perl","/script_perl2.pl"]
 
 
 
